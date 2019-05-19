@@ -1,0 +1,32 @@
+<div class="contacts-header">Quản lý danh mục tin tức
+  <hr>
+</div>
+<button type="button" class="btn btn-info"><a routerLink="/contacts/add">Add</a></button>
+<div class="">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tiêu đề</th>
+        <th scope="col">Parent</th>
+        <th scope="col">Menu chính</th>
+        <th scope="col">Trạng thái</th>
+        <th scope="col">Select</th>
+      </tr>
+    </thead>
+    <tbody *ngFor= "let arr of arrContent">
+      <tr>
+        <td>{{arr.id}}</td>
+        <td>{{arr.tieude}}</td>
+        <td>{{arr.parent}}</td>
+        <td>{{arr.menuchinh}}</td>
+        <td>{{arr.trangthai}}</td>
+        <button type="button" class="btn btn-success">
+          <a routerLink="/contacts/edit/{{arr.id}}">Edit</a>
+        </button>
+        <button type="button" class="btn btn-danger" (click) = "removeContact(arr.id)" >Delete</button>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
